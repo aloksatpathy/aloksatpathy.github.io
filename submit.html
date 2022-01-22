@@ -1,10 +1,41 @@
 <html>
 <head>
     <title>RESULT PAGE</title>
- </head> 
+</head> 
  <body>
-    Your form has been successfully submitted.<br>
+   
+  <p> Hi <b><span id="fname"></span></b> <b><span id="lname"></span>!</b> Your form has been successfully submitted. Glad to know your favorite national park is <b><span id="park"></span></b> from <b><span id="favorite"></span></b>.</p><br>
+  
+  <img id="image" src="" style="height:180 width:220">
     
+    <br><br>
     <a href="index.html">Back</a>
+    
+  <script>
+    document.getElementById("fname").innerHTML = localStorage.getItem("fname");
+    document.getElementById("lname").innerHTML = localStorage.getItem("lname");
+    document.getElementById("park").innerHTML = localStorage.getItem("park");
+    var favorite = localStorage.getItem("favorite");
+    document.getElementById("favorite").innerHTML = favorite;
+    
+    var image = "";
+    if(favorite == "Africa") {
+      image="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bwindi.JPG/800px-Bwindi.JPG"
+    } else if(favorite == "Asia") {
+      image="https://upload.wikimedia.org/wikipedia/commons/6/63/Valley_of_flowers_uttaranchal_full_view.JPG"
+    } else if(favorite == "Europe") {
+      image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Zalazak.jpg/1200px-Zalazak.jpg"
+    } else if(favorite == "North America") {
+      image = "https://www.planetware.com/photos-large/USWY/usa-wyoming-yellowstone-grand-prismatic-spring.jpg"
+    } else if(favorite == "South America") {
+      image = "https://img.theculturetrip.com/768x/smart/wp-content/uploads/2018/12/r1et3m.jpg"
+    } else if(favorite == "Oceania") {
+      image = "https://nationalparks-15bc7.kxcdn.com/images/parks/aoraki-mount-cook/20210206232653-Aroki%20Mount%20Cook%20National%20Park.jpg?width=320&height=240"
+    }
+    
+    document.getElementById("image").src=image;
+    
+    </script>
+
      </body>      
 </html>

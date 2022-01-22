@@ -5,10 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
+    <script> console.log("I am learning Javascript")
+    </script>
 </head>
 
 <body>
+  <p><span id="salutation"></span> Alok<span id="message"></span></p>
+  
+  <br><br>
+  <button onclick="document.getElementById('message').innerHTML=' How are you?'">Click me!</button>
+  
+  <h3 id="display"></h3>
+  
+  <input type="text" id="text" oninput="updateText()">
+  
+  <br><br>
+  <h3 id="colordisplay"></h3>
+  <input type="text" id="colortext" oninput="myFunction()">
+  
+  <script>
+    document.getElementById("salutation").innerHTML = "Hi"
+    
+    function updateText()
+    {
+      document.getElementById("display").innerHTML = document.getElementById("text").value;
+    }
+    
+    
+    
+    function myFunction()
+{
+    var x = document.getElementById("colortext"),
+        txt = x.innerHTML;
+    (myFunction = function() {
+        var newText = "";
+        for(var i=0, l=txt.length; i<l; i++)
+        {
+            newText += '<span style="color:#'+getColor()+'">'+txt.charAt(i)+'</span>';
+        }
+        x.innerHTML = newText;
+    })();
+    
+    document.getElementById("colordisplay").innerHTML = document.getElementById("colortext").value;
+}
 
+function getColor()
+{
+    var colorString="";
+    for(var i=0;i<6;i++)
+    {
+        var num = Math.floor(Math.random()*17);
+        hexNum = num.toString(16);
+        colorString += hexNum;
+    }
+    return colorString;
+}
+    
+  </script>
 </body>
 
 </html>

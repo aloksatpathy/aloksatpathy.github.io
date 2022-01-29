@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+      console.log("Hi we are learning Javascript.")
+      console.log("Addition of numbers: " + (2+3-10))
+    </script>
+</head>
+
+<body>
+  
+  <p id="text1">Change my text.</p> 
+  <p id="text2"></p>
+  
+  <button id="button1" 
+  onclick="document.getElementById('text2').innerHTML='New text appears'
+  document.getElementById('button1').style.display='none'" >Create new text</button>
+  
+  <button id="button2" onclick=hidebutton1()>Show button1</button>
+
+<br><br>
+  <input type="text" id="display1" oninput="updatetext1display()">
+  <br><br>
+  <h2 id="text1display"></h2>
+  
+
+<script>
+  
+  document.getElementById("text1").innerHTML = "Updated through javascript"
+  
+  function hidebutton1()
+  {
+    document.getElementById("button1").style.display="block"
+    document.getElementById("button2").style.display="none"
+  }
+  
+  function updatetext1display()
+  {
+    document.getElementById("text1display").innerHTML = document.getElementById("display1").value;
+  }
+  
+  
+</script>
+</body>
+
+</html>

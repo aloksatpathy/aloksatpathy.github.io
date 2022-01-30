@@ -14,16 +14,30 @@
   <p id="text2"></p>
   
   <button id="button1" 
-  onclick="document.getElementById('text2').innerHTML='New text appears'
-  document.getElementById('button1').style.display='none'" >Create new text</button>
+  onclick="document.getElementById('text2').innerHTML='New text appears'" >Create new text</button>
   
-  <button id="button2" onclick=hidebutton1()>Show button1</button>
+  <button id="button2" onclick=hidebutton1()>Hide button1</button>
 
 <br><br>
   <input type="text" id="display1" oninput="updatetext1display()">
   <br><br>
   <h2 id="text1display"></h2>
   
+  
+  <br><br>
+  <h1>Arithmetic operations</h1>
+  <h3>
+    <input type="text" id="num1">
+    <span id="operator"> op </span>
+    <input type="text" id="num2">
+    <span>  =  </span>
+    <span id="res"></span>
+  </h3>
+  
+  <button onclick="add()">Add</button>
+  <button onclick="subtract()">Subtract</button>
+  <button onclick="multiply()">Multiply</button>
+  <button onclick="divide()">Divide</button>
 
 <script>
   
@@ -31,8 +45,7 @@
   
   function hidebutton1()
   {
-    document.getElementById("button1").style.display="block"
-    document.getElementById("button2").style.display="none"
+    document.getElementById("button1").style.display="none"
   }
   
   function updatetext1display()
@@ -40,6 +53,42 @@
     document.getElementById("text1display").innerHTML = document.getElementById("display1").value;
   }
   
+  
+  
+  function add()
+  {
+    var a = document.getElementById("num1").value;
+    var b = document.getElementById("num2").value;
+    
+    var result = Number(a) + Number(b);
+    
+    document.getElementById("operator").innerHTML=" + "
+    
+    document.getElementById("res").innerHTML=result;
+  }
+  
+  function subtract()
+  {
+    var a = document.getElementById("num1").innerHTML;
+    var b = document.getElementById("num2").innerHTML;
+    
+    var result = Number(a) - Number(b);
+    
+    document.getElementById("operator").innerHTML=" - ";
+    
+    document.getElementById("res").innerHTML=result;
+  }
+  
+  
+  var x = 5;
+  x=6;
+  
+  y=7;
+  z=x+y;
+  
+  console.log("value of x= " + x);
+  console.log("value of y= " + y);
+  console.log("value of z= " + z);
   
 </script>
 </body>

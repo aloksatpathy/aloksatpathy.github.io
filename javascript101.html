@@ -41,31 +41,34 @@
   <h3 id="colordisplay"></h3>
   <input type="text" id="colortext" oninput="myFunction()">
   
+  
+  
+  
   <script>
     document.getElementById("salutation").innerHTML = "Hi"
+    
+    
     
     function updateText()
     {
       document.getElementById("display").innerHTML = document.getElementById("text").value;
     }
     
-    
-    
     function myFunction()
-{
-    var x = document.getElementById("colortext"),
-        txt = x.innerHTML;
+    {
+    var x = document.getElementById("colortext");
+    var txt = x.value;
     (myFunction = function() {
         var newText = "";
         for(var i=0, l=txt.length; i<l; i++)
         {
             newText += '<span style="color:#'+getColor()+'">'+txt.charAt(i)+'</span>';
         }
-        x.innerHTML = newText;
+        document.getElementById("colordisplay").innerHTML = newText;
     })();
     
-    document.getElementById("colordisplay").innerHTML = document.getElementById("colortext").value;
-}
+    
+    }
 
 function getColor()
 {

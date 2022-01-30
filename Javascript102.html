@@ -34,13 +34,65 @@
     <span id="res"></span>
   </h3>
   
-  <button onclick="add()">Add</button>
-  <button onclick="subtract()">Subtract</button>
-  <button onclick="multiply()">Multiply</button>
-  <button onclick="divide()">Divide</button>
-
-<script>
+  <button onclick="arithmetic('add')">Add</button>
+  <button onclick="arithmetic('subtract'function arithmetic(operation)
+  {
+    var a = document.getElementById("num1").value;
+    var b = document.getElementById("num2").value;
+    
+    num1 = Number(a);
+    num2 = Number(b);
+    
+    var result = 0;
+    if(operation == "add")
+    {
+      result = num1 + num2;
+      
+      document.getElementById("operator").innerHTML=" + "
+    }
+    else if(operation == "subtract")
+    {
+      result = num1 - num2;
+      
+      document.getElementById("operator").innerHTML=" - "
+    }
+    else if(operation == "multiply")
+    {
+      result = num1 * num2;
+      
+      document.getElementById("operator").innerHTML=" X "
+    }
+    else if(operation == "divide")
+    {
+      result = num1 / num2;
+      
+      document.getElementById("operator").innerHTML=" / "
+    }
+    
+    document.getElementById("res").innerHTML=result;
+  }
   
+  ">Subtract</button>
+  <button onclick="arithmetic('multiply')">Multiply</button>
+  <button onclick="arithmetic('divide')">Divide</button>
+
+
+
+  <br><br>
+
+  <h2>Fibonacci sequence</h2>
+  <button onclick="printFibonacci()">Generate</button>
+  <p id="fib"></p>
+  
+  
+  
+  
+  
+  <p id="random"></p>
+  <button onclick="random()">Generate random</button>
+  
+<script>
+
   document.getElementById("text1").innerHTML = "Updated through javascript"
   
   function hidebutton1()
@@ -55,42 +107,92 @@
   
   
   
-  function add()
+  function random()
+  {
+    document.getElementById("random").innerHTML = Math.round(Math.random()*100000);
+  };
+  
+  
+  
+  function arithmetic(operation)
   {
     var a = document.getElementById("num1").value;
     var b = document.getElementById("num2").value;
     
-    var result = Number(a) + Number(b);
+    num1 = Number(a);
+    num2 = Number(b);
     
-    document.getElementById("operator").innerHTML=" + "
+    var result = 0;
+    if(operation == "add")
+    {
+      result = num1 + num2;
+      
+      document.getElementById("operator").innerHTML=" + "
+    }
+    else if(operation == "subtract")
+    {
+      result = num1 - num2;
+      
+      document.getElementById("operator").innerHTML=" - "
+    }
+    else if(operation == "multiply")
+    {
+      result = num1 * num2;
+      
+      document.getElementById("operator").innerHTML=" X "
+    }
+    else if(operation == "divide")
+    {
+      result = num1 / num2;
+      
+      document.getElementById("operator").innerHTML=" / "
+    }
     
     document.getElementById("res").innerHTML=result;
   }
   
-  function subtract()
+  
+  
+  
+  
+  function printFibonacci()
   {
-    var a = document.getElementById("num1").innerHTML;
-    var b = document.getElementById("num2").innerHTML;
+    var num = 0;
+    setInterval(function()
+    {
+      document.getElementById("fib").innerHTML += getFibonacci(num) + ", ";
+      num++;
+    }, 1000)
+  }
+
+  function getFibonacci(num)
+  {
+    var x = 0, y = 1, temp;
     
-    var result = Number(a) - Number(b);
+    while(num > 0)
+    {
+      temp = y;
+      y = x + y;
+      x = temp;
+      num--;
+    }
     
-    document.getElementById("operator").innerHTML=" - ";
-    
-    document.getElementById("res").innerHTML=result;
+    return x;
   }
   
+  x = 6;
+  console.log(x);
+  x += 2; // equivalent to x = x + 2 
+  console.log(x);
+  x++;
+  console.log(x);
+  x--;
+  console.log(x);
   
-  var x = 5;
-  x=6;
   
-  y=7;
-  z=x+y;
-  
-  console.log("value of x= " + x);
-  console.log("value of y= " + y);
-  console.log("value of z= " + z);
   
 </script>
 </body>
 
 </html>
+

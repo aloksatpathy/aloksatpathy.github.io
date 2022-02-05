@@ -2,30 +2,44 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+  <script>
+    
+    
+  </script>
 </head>
 
 <body>
 
-<p id="num1">12345566</p>
-<button onclick="removeLast()">Remove last character</button>
+<input id="textNumber" disabled="">
+<button onclick="operate('4')">4</button>
+<button onclick="operate('5')">5</button>
+
+<h2></h2>
+
+<button>
+  
+</button>
+
 
 <script>
-  
-  function removeLast()
+
+  function operate(x)
   {
-    var str =  document.getElementById("num1").innerHTML;
-    
-    str = str.substring(0, str.length - 1)
-    
-    document.getElementById("num1").innerHTML = str
+    document.getElementById("textNumber").value += x;
   }
   
+  document.getElementById("text1").innerHTML = "Hello!";
   
+  var x = 7;
+  y=5;
+  
+  function abc()
+  {
+    
+  }
+  
+  console.log();
 </script>
-
 </body>
 
 </html>

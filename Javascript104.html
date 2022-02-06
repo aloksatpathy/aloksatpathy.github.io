@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <script>
+    
+      </script>
+</head>
+
+<body>
+
+ <!--Html elements -->
+
+<div style="text-align: center">
+  
+  
+<form action="result.html">
+  <label>Enter your password:</label>
+  <input type="text" id="text"> <br>
+  <input type="submit" value="Submit" onclick="verify()">
+</form>
+</div>
+
+
+<h2 id="display1"></h2>
+
+
+<!-- end of html elements-->
+<!-- Javascript -->
+<script>
+  
+  function verify()
+  {
+    var x = document.getElementById("text").value;
+    localStorage.setItem("text1", x);
+  }
+  
+  num = 0
+  str=""
+  while(num<10)
+  {
+    str += num;
+    num++;
+  }
+  
+  
+  str2 = ""
+  for(var z=0; z<30; z++)
+  {
+    if(z%2 == 1)
+    {
+      str2 = str2 + z + ", "
+    }
+  }
+  console.log(str2)
+  </script>
+
+<!-- end of javascript -->
+</body>
+
+</html>

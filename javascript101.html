@@ -39,7 +39,7 @@
   
   <br><br>
   <h3 id="colordisplay"></h3>
-  <input type="text" id="colortext" oninput="myFunction()">
+  <input type="text" id="colortext" oninput="updateTextColor()">
   
   
   
@@ -54,19 +54,16 @@
       document.getElementById("display").innerHTML = document.getElementById("text").value;
     }
     
-    function myFunction()
+    function updateTextColor()
     {
-    var x = document.getElementById("colortext");
-    var txt = x.value;
-    (myFunction = function() {
+    var txt = document.getElementById("colortext").value;
+
         var newText = "";
         for(var i=0, l=txt.length; i<l; i++)
         {
             newText += '<span style="color:#'+getColor()+'">'+txt.charAt(i)+'</span>';
         }
         document.getElementById("colordisplay").innerHTML = newText;
-    })();
-    
     
     }
 

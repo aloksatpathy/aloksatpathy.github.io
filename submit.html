@@ -1,15 +1,21 @@
 <html>
 <head>
     <title>RESULT PAGE</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 </head> 
  <body>
    
-  <p> Hi <b><span id="fname"></span></b> <b><span id="lname"></span>!</b> Your form has been successfully submitted. Glad to know your favorite national park is <b><span id="park"></span></b> from <b><span id="favorite"></span></b>.</p><br>
+  <p> Hi <b><span id="fname"></span></b> <b><span id="lname"></span>!</b>
+  <br><br>
+  Your form has been successfully submitted.
+  <br>
+  Glad to know your favorite national park is <b><span id="park"></span></b> from <b><span id="favorite"></span></b>.</p><br>
   
-  <img id="image" src="" style="height:180 width:220">
+  <img id="image" src="" height="300" width="400">
     
     <br><br>
-    <a href="index.html">Back</a>
+    <a href="survey.html"><< Back</a>
     
   <script>
     document.getElementById("fname").innerHTML = localStorage.getItem("fname");

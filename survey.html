@@ -100,9 +100,10 @@
     }
 
         var newText = "";
-        for(var i=0, l=txt.length; i<l; i++)
+        for(var i=0, abc=txt.length; i<abc; i++)
         {
             newText += '<span style="color:#'+getColor()+'">'+txt.charAt(i)+'</span>';
+            console.log(newText);
         }
         document.getElementById(elemToUpdate).innerHTML = newText;
     

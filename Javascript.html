@@ -159,10 +159,26 @@
     toDo.push(item);
     document.getElementById("ToDoItem").value = "";
     
+    refreshTodoList();
+  }
+  
+  function removeTodoItem(item)
+  {
+    var index = toDo.indexOf(item);
+    toDo.splice(index, 1)
+    
+    refreshTodoList();
+  }
+  
+  function refreshTodoList()
+  {
     var finalList = "<ul>";
     for (var i=0; i<toDo.length; i++)
     {
-      finalList += "<li>" + toDo[i] + "</li>"
+      removeLink = "<span style='font-size:12px'>&nbsp &nbsp <a href=\"javascript:removeTodoItem('" + toDo[i] + "')\">Remove</a></span>";
+
+      finalList += "<li>" + toDo[i] + removeLink + "</li>"
+      console.log(finalList);
     }
     finalList += "</ul>"
     
